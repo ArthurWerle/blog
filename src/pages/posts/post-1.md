@@ -10,16 +10,12 @@ image:
 tags: ["astro", "blogging", "learning in public"]
 
 ---
-import Greeting from '../../components/Greeting';
-
 
 # MDX?
 
 Published on: 2022-07-01
 
 Welcome to my _new blog_ about learning Astro! Here, I will share my learning journey as I build a new website.
-
-<Greeting client:load messages={["Hi", "Hello", "Howdy", "Hey there"]} />
 
 ## What I've accomplished
 
