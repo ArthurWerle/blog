@@ -17,7 +17,18 @@ const { pageTitle } = Astro.props
     class="max-w-3xl mx-auto min-h-screen text-text-body bg-bg-body px-6 sm:px-8"
   >
     <Header />
-    <h1>{pageTitle}</h1>
+    <h1
+      class="font-bold text-text-heading text-center text-4xl md:text-5xl pt-4 pb-2 overflow-hidden"
+    >
+      <span
+        class="
+            bg-gradient-to-bl bg-no-repeat bg-bottom bg-[length:90%_40%]
+            from-primary-blue to-primary-blue dark:from-primary-blue dark:to-primary-blue
+        "
+      >
+        {pageTitle}
+      </span>
+    </h1>
     <slot />
     <Footer />
     <script>
