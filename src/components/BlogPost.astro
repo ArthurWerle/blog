@@ -1,4 +1,17 @@
 ---
-const { title, url } = Astro.props;
+import { timestampToHuman } from "../utils/dates"
+
+const { title, url, date } = Astro.props
+const formattedDate = timestampToHuman(date)
 ---
-<li><a href={url}>{title}</a></li>
+
+<li class="pd-0 list-none text-sm mb-1">
+  <div class="flex">
+    <div class="w-24"><time>{formattedDate}</time></div>
+    <a
+      href={url}
+      title={`Go to ${title}`}
+      class="border-b-2 border-b-gray-300 hover:border-b-black">{title}</a
+    >
+  </div>
+</li>

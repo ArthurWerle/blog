@@ -1,0 +1,21 @@
+---
+layout: "../../layouts/MarkdownPostLayout.astro"
+title: "What can we learn from Starbucks"
+pubDate: 2022-01-10
+description: "What can we learn from the processes of companies like Starbucks and McDonalds, such as many others fast-food brands, and why software engineering allows us to learn from almost any other areas."
+author: "Arthur Werle"
+image:
+  url: "https://astro.build/assets/blog/astro-1-release-update/cover.jpeg"
+  alt: "The Astro logo with the word One."
+tags: ["tech", "processes"]
+---
+
+# What can we learn from Starbucks
+
+&nbsp;Computers science is heavily attached to abstractions. If you work as a software engineer or any software-related field, abstractions are present on your routine. I don't know any other area which deals with this level os abstractions, and like we always say: everything is a trade-off. Against us, is a big learning-curve, dealings with philosophical concepts of virtual objects (yes, sometimes is hard to work with things that don't exist in real life) and thousands of logics, models, architectures, data representations and integrations. But, in our benefit, are the unmesurable ways of dealing with such problems, applying knowledge from almost everything in the world. Sometimes, we use even the same words from other areas, or where do you think "deliveries", "tasks", "patches" and "releases" came from? And this is just the top of the mountain. Truth is, we stole a lot from other fields, but I think we are missing some points. Some very important points, actually.
+&nbsp;When you think about these companies I just mentioned, what's the first thing that comes in your mind? The good flavors? The strong marketing? The well defined products? The speed of process? I think most of us miss one thing: since you order the same product, **it always taste the same**. No matter which day it is, who are the employees working on that day, where in the world you are, and most important, **how much experience have the people working there**¹. Can you imagine how hard is this? You may say: "well, aren't they're just following a recipe?". Exactly. They know we are all humans, of course we are going to make mistakes sometimes, but these companies learned **how to make mistakes difficult**. When was the last time you made a mistake, maybe an error in your merge request, which could be avoided by some of these: training, documentation or a clearer vision of the tasks' goal? I bet these points are taken insanely serious in these companies. Every employee must be trained, every recipe has a clear and direct documentation and every step of the process is breaked down to the smallest possible to have clear objectives. When it comes to software engineering, we could add: strong code-review culture, linters, commit hooks, unit tests, good documentations, design systems, FAQ about the codebase, ADRs (Architecture Decision Record) about our decisions. These are just some examples of what we can do to "automate"² our process.
+&nbsp;With all that, what I want to say is we need to learn from the processes of these companies, because I see there's a big problem with that in many software houses. The delivery quality depends on a few people, it's hard to new employees have the same level of understanding of the business like the old ones, and a lot more of mistakes caused by problems these companies have solved decades ago. We should always have big goals, and even that we can't apply this by 100%, we must get as close as possible. I hope someday we could have a Starbucks-type process in the software engineering field, letting us depend less on people³ and more on the process.
+
+¹ I know, everyone must learn from another peson in the beggining, but my point is not saying that everbody should learn by themselves, my point is: you can't say if the person which is making your order has 3 months or 10 years of experience working there.  
+² By automate, I mean turning the decisions less people-dependant and more business-oriented. We should not spend hours thinking about how to solve a problem, we should just solve it the way its said to do in our docs, linters, hooks, FAQs or ADRs.  
+³ Just to be clear, I'm not saying we shouldn't trust people. I'm saying that processes are more trustable than ONLY people. We should always have both.
