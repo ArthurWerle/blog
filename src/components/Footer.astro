@@ -1,17 +1,16 @@
 ---
-import Social from './Social.astro';
+import Social from "./Social.astro"
 ---
 
-<footer>
-  <Social platform="twitter" username="astrodotbuild" />
-  <Social platform="github" username="withastro" />
-  <Social platform="youtube" username="astrodotbuild" />
+<footer class="mt-20">
+  <p>u can find me on:</p>
+  <div class="flex gap-3">
+    <Social
+      platform="linkedin"
+      username="in/arthur-werle-a8635a114/"
+      label="lnkdin"
+    />
+    <Social platform="github" username="ArthurWerle" label="gthb" />
+    <Social platform="instagram" username="werlearthur/" label="instgrm" />
+  </div>
 </footer>
-
-<style>
-  footer {
-    display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
-  }
-</style>

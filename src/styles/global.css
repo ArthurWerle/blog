@@ -4,8 +4,6 @@
 
 :root {
   font-family: "Space Grotesk", sans-serif;
-  font-size: 1.125em;
-  line-height: 1.85;
 }
 
 html {
@@ -60,7 +58,6 @@ html {
     color: theme("colors.text.code");
     padding: 0.125rem 0.25rem;
     border-radius: 0.25rem;
-    font-size: 0.875em;
     font-weight: 600;
     border: 1px solid theme("colors.border.code");
     margin-bottom: 1.25em;
