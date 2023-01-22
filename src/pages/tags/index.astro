@@ -6,12 +6,12 @@ const pageTitle = "tags"
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <p>navigate through my writings' tags.</p>
-  <div class="tags">
+  <p class="text-sm">navigate through my writings' tags.</p>
+  <div class="flex gap-3 flex-wrap mt-4">
     {
       tags.map((tag) => (
-        <p class="tag">
-          <a href={`/tags/${tag}`}>{tag}</a>
+        <p class="text-sm underline">
+          <a href={`/tags/${tag}`}>#{tag}</a>
         </p>
       ))
     }

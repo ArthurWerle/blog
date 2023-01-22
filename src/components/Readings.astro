@@ -1,17 +1,6 @@
 ---
+import { READINGS } from "../constants/readings"
 import StarIcon from "../icons/Star.astro"
-
-const readings = [
-  { title: "dom quixote", author: "machado de assis", rating: 4 },
-  { title: "dom quixote", author: "machado de assis", rating: 1 },
-  { title: "dom quixote", author: "machado de assis", rating: 2 },
-  { title: "dom quixote", author: "machado de assis", rating: 5 },
-  { title: "dom quixote", author: "machado de assis", rating: 1 },
-  { title: "dom quixote", author: "machado de assis", rating: 5 },
-  { title: "dom quixote", author: "machado de assis", rating: 5 },
-  { title: "dom quixote", author: "machado de assis", rating: 2 },
-  { title: "dom quixote", author: "machado de assis", rating: 3 },
-]
 
 function resolveRatingStars(rate) {
   return Array.from(Array(rate), () => StarIcon)
@@ -20,15 +9,21 @@ function resolveRatingStars(rate) {
 
 <ul>
   {
-    readings.map((book) => (
+    READINGS.map((book) => (
       <li class="mt-2">
-        <div class="flex gap-1 text-sm">
-          <p>{book.title}</p>
-          <p>{book.author}</p>
+        <div class="flex flex-col-reverse md:flex-row gap-1 text-sm">
+          <p class="flex">
+            <i>{book.title}</i>
+          </p>
+          <p>
+            <i>
+              <strong>{book.author}</strong>
+            </i>
+          </p>
         </div>
         <div class="flex">
           {resolveRatingStars(book.rating).map((Icon) => (
-            <Icon isFilled={true} size="15px" />
+            <Icon isFilled size="15px" />
           ))}
         </div>
       </li>
