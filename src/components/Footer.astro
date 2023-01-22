@@ -3,10 +3,12 @@ import Social from "./Social.astro"
 import Navigation from "./Navigation.astro"
 ---
 
-<footer class="mt-20">
+<footer class="mt-12">
   <p class="text-sm">u can find me on:</p>
   <Social />
-  <div class="mt-4 flex justify-between items-baseline">
+  <div
+    class="mt-10 flex flex-col justify-center text-center gap-2 md:flex-row md:justify-between md:items-baseline"
+  >
     <p class="text-sm">copyright © {new Date().getFullYear()} arthur werle</p>
     <Navigation />
   </div>
