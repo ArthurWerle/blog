@@ -1,16 +1,13 @@
 ---
 import Social from "./Social.astro"
+import Navigation from "./Navigation.astro"
 ---
 
 <footer class="mt-20">
-  <p>u can find me on:</p>
-  <div class="flex gap-3">
-    <Social
-      platform="linkedin"
-      username="in/arthur-werle-a8635a114/"
-      label="lnkdin"
-    />
-    <Social platform="github" username="ArthurWerle" label="gthb" />
-    <Social platform="instagram" username="werlearthur/" label="instgrm" />
+  <p class="text-sm">u can find me on:</p>
+  <Social />
+  <div class="mt-4 flex justify-between items-baseline">
+    <p class="text-sm">copyright © {new Date().getFullYear()} arthur werle</p>
+    <Navigation />
   </div>
 </footer>

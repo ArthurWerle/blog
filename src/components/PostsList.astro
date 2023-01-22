@@ -1,0 +1,26 @@
+---
+import BlogPost from "../components/BlogPost.astro"
+const { size } = Astro.props
+const allPosts = await Astro.glob("../pages/posts/*.md")
+
+const shouldSlice = size && size < allPosts.length
+
+const postsToDisplay = shouldSlice
+  ? allPosts
+      .reverse()
+      .slice(size - 1)
+      .reverse()
+  : allPosts
+---
+
+<ul class="mt-3">
+  {
+    postsToDisplay.map((post) => (
+      <BlogPost
+        url={post.url}
+        title={post.frontmatter.title}
+        date={post.frontmatter.pubDate}
+      />
+    ))
+  }
+</ul>

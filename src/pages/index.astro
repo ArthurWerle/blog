@@ -1,10 +1,82 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro"
+import TwitterIcon from "../icons/Twitter.astro"
+import GithubIcon from "../icons/Github.astro"
+import InstagramIcon from "../icons/Instagram.astro"
+import LinkedinIcon from "../icons/Linkedin.astro"
+import FileIcon from "../icons/File.astro"
+import PostsList from "../components/PostsList.astro"
+import Readings from "../components/Readings.astro"
+
 const pageTitle = "Arthur Werle"
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <p class="text-2xl pb-4">
-    Software Engineer. Frontend-oriented. Bookworm. Aspiring writter.
+  <h2 class="text-md font-bold">hi there!</h2>
+  <p class="text-sm pb-4">
+    software engineer. bookworm. aspiring writter. history, neurocience,
+    culture, tech and lowercase typing enthusiast.
   </p>
+  <p class="flex gap-1 text-sm">
+    find my codes on
+    <a
+      class="flex items-center gap-1 underline"
+      href="https://www.github.com/ArthurWerle"
+      title="Go to Arthur's Github profile"
+      target="_blank"
+      >github <GithubIcon size="15px" />
+    </a>
+  </p>
+  <p class="flex gap-1 text-sm">
+    see me joking and daily talking on
+    <a
+      class="flex items-center gap-1 underline"
+      href="https://www.twitter.com/werlearthur"
+      title="Go to Arthur's Twitter profile"
+      target="_blank"
+      >twitter <TwitterIcon size="15px" />
+    </a>
+  </p>
+  <p class="flex gap-1 text-sm">
+    music stories and real life on my
+    <a
+      class="flex items-center gap-1 underline"
+      href="https://www.instagram.com/werlearthur"
+      title="Go to Arthur's Instagram profile"
+      target="_blank"
+      >instagram <InstagramIcon size="15px" />
+    </a>
+  </p>
+  <p class="flex gap-1 text-sm">
+    <p class="flex items-center gap-1 text-sm">
+      about work: <a
+        class="flex items-center gap-1 underline"
+        href="https://www.linkedin.com/in/arthur-werle-a8635a114/"
+        title="Go to Arthur's Linkedin profile"
+        target="_blank"
+        >linkedin <LinkedinIcon size="15px" />
+      </a>
+    </p>
+    <p class="text-sm">email me at <i>arthur.werle@gmail.com</i></p>
+  </p>
+  <p class="text-sm flex gap-1">
+    download my
+    <a
+      class="underline flex items-center gap-1"
+      href="arthur-resume.pdf"
+      title="Download Arthur's resume"
+      download
+    >
+      resume
+      <FileIcon size="15px" />
+    </a>
+  </p>
+  <div class="mt-10">
+    <h2 class="font-bold">lastest writings</h2>
+    <PostsList size={5} />
+  </div>
+  <div class="mt-10">
+    <h2 class="font-bold">lastest readings</h2>
+    <Readings />
+  </div>
 </BaseLayout>

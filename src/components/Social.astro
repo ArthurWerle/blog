@@ -1,12 +1,49 @@
 ---
-const { platform, username, label } = Astro.props
+import TwitterIcon from "../icons/Twitter.astro"
+import GithubIcon from "../icons/Github.astro"
+import InstagramIcon from "../icons/Instagram.astro"
+import LinkedinIcon from "../icons/Linkedin.astro"
+
+const socialMedias = [
+  {
+    platform: "linkedin",
+    username: "in/arthur-werle-a8635a114/",
+    label: "lnkdin",
+    Icon: LinkedinIcon,
+  },
+  {
+    platform: "github",
+    username: "ArthurWerle",
+    label: "gthb",
+    Icon: GithubIcon,
+  },
+  {
+    platform: "instagram",
+    username: "werlearthur/",
+    label: "instgrm",
+    Icon: InstagramIcon,
+  },
+  {
+    platform: "twitter",
+    username: "werlearthur",
+    label: "twttr",
+    Icon: TwitterIcon,
+  },
+]
 ---
 
-<a
-  href={`https://www.${platform}.com/${username}`}
-  class="unset animated-link underline"
-  target="_blank"
-  title={`access arthur's profile on ${platform}`}
->
-  {label}
-</a>
+<div class="flex gap-3">
+  {
+    socialMedias.map(({ platform, username, label, Icon }) => (
+      <a
+        href={`https://www.${platform}.com/${username}`}
+        class="unset animated-link underline flex align-middle gap-1 text-sm"
+        target="_blank"
+        title={`access arthur's profile on ${platform}`}
+      >
+        <Icon />
+        {label ? label : platform}
+      </a>
+    ))
+  }
+</div>

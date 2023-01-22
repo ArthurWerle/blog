@@ -1,0 +1,37 @@
+---
+import StarIcon from "../icons/Star.astro"
+
+const readings = [
+  { title: "dom quixote", author: "machado de assis", rating: 4 },
+  { title: "dom quixote", author: "machado de assis", rating: 1 },
+  { title: "dom quixote", author: "machado de assis", rating: 2 },
+  { title: "dom quixote", author: "machado de assis", rating: 5 },
+  { title: "dom quixote", author: "machado de assis", rating: 1 },
+  { title: "dom quixote", author: "machado de assis", rating: 5 },
+  { title: "dom quixote", author: "machado de assis", rating: 5 },
+  { title: "dom quixote", author: "machado de assis", rating: 2 },
+  { title: "dom quixote", author: "machado de assis", rating: 3 },
+]
+
+function resolveRatingStars(rate) {
+  return Array.from(Array(rate), () => StarIcon)
+}
+---
+
+<ul>
+  {
+    readings.map((book) => (
+      <li class="mt-2">
+        <div class="flex gap-1">
+          <p>{book.title}</p>
+          <p>{book.author}</p>
+        </div>
+        <div class="flex">
+          {resolveRatingStars(book.rating).map((Icon) => (
+            <Icon isFilled={true} size="15px" />
+          ))}
+        </div>
+      </li>
+    ))
+  }
+</ul>
