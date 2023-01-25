@@ -1,3 +1,7 @@
+export function timestampToHumanUTC(timestamp: string): string {
+  return new Date(addTime(timestamp)).toDateString()
+}
+
 export function timestampToHuman(timestamp: string): string {
   const date = new Date(addTime(timestamp))
   const month = dayOrMonthToString(date.getMonth() + 1)

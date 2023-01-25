@@ -1,15 +1,18 @@
 ---
 import Tags from "../components/Tags.astro"
-import { timestampToHuman } from "../utils/dates"
+import { timestampToHumanUTC } from "../utils/dates"
 import BaseLayout from "./BaseLayout.astro"
 const { frontmatter } = Astro.props
-const formattedDate = timestampToHuman(frontmatter.pubDate)
+const { minutesRead } = frontmatter
+const formattedDate = timestampToHumanUTC(frontmatter.pubDate)
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
   <div class="flex mb-1">
     <span class="text-sm mr-1">{frontmatter.author},</span>
-    <span class="text-sm"><time>{formattedDate}</time></span>
+    <span class="text-sm mr-1"><time>{formattedDate}</time></span>
+    <span class="mr-1">🞄</span>
+    <span class="text-sm">{minutesRead}</span>
   </div>
 
   <div class="mb-5">
