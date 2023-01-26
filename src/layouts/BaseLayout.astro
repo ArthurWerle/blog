@@ -8,8 +8,6 @@ const { pageTitle, description, image = {} } = Astro.props
 
 const path = Astro.url.pathname.replace(/\/$/, "")
 const isHome = path === ""
-
-console.log("description", description)
 ---
 
 <html lang="en">
