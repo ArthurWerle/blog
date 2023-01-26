@@ -5,10 +5,11 @@ pubDate: 12-22-2023
 description: "Some thoughts about this return to office movement; trying to understand its reasons, leaders and its consequences."
 author: "Arthur Werle"
 image:
-  url: ""
-  alt: ""
+  url: "/public/office.jpg"
+  alt: "Inside an office with people working"
 tags: ["RANT", "tech market"]
 ---
+![Inside an office with people working](/public/office.jpg "Inside an office with people working")
 
 One of the best things that IT provides to people is freedom. There are 2 main types of freedom, which have more subtypes, but let's focus on the 3 big ones. Geographic freedom and financial freedom. The majority of IT workers have two, but some have just one or none of them. There isn't a way to say which one is better, personally speaking, one without the other is pretty useless. But the point is: in the last 3 years, the number of IT workers with these two types of freedom has improved. **A LOT.**
 

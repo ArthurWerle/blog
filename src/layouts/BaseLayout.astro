@@ -2,10 +2,14 @@
 import Footer from "../components/Footer.astro"
 import ArrowLeftIcon from "../icons/ArrowLeft.astro"
 import "../styles/global.css"
-const { pageTitle } = Astro.props
+const DEFAULT_DESCRIPTION =
+  "Arthur Werle is a software engineer who loves reading, writing and sharing things."
+const { pageTitle, description, image = {} } = Astro.props
 
 const path = Astro.url.pathname.replace(/\/$/, "")
 const isHome = path === ""
+
+console.log("description", description)
 ---
 
 <html lang="en">
@@ -19,9 +23,10 @@ const isHome = path === ""
       rel="stylesheet"
     />
     <meta name="viewport" content="width=device-width" />
+    <meta property="og:image" content={image.url ? image.url : ""} />
     <meta
       name="description"
-      content="Arthur Werle is a software engineer which loves reading, writing and sharing things."
+      content={description ? description : DEFAULT_DESCRIPTION}
     />
     <meta name="generator" content={Astro.generator} />
     <title>arthur werle</title>

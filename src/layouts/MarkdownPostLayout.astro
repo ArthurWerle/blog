@@ -7,7 +7,11 @@ const { minutesRead } = frontmatter
 const formattedDate = timestampToHumanUTC(frontmatter.pubDate)
 ---
 
-<BaseLayout pageTitle={frontmatter.title}>
+<BaseLayout
+  pageTitle={frontmatter.title}
+  description={frontmatter.description}
+  image={frontmatter.image}
+>
   <div class="flex mb-1">
     <i class="text-sm mr-1">{frontmatter.author},</i>
     <i class="text-sm mr-1"

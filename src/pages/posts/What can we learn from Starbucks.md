@@ -5,10 +5,12 @@ pubDate: 10-01-2022
 description: "What can we learn from the processes of companies like Starbucks, such as many others fast-food brands, and why software engineering allows us to learn from almost any other areas."
 author: "Arthur Werle"
 image:
-  url: ""
-  alt: ""
+  url: "/public/starbucks.jpg"
+  alt: "Picture of the outside of a Starbucks Coffee store"
 tags: ["tech", "processes"]
 ---
+
+![Picture of the outside of a Starbucks Coffee store](/public/starbucks.jpg "Picture of the outside of a Starbucks Coffee store")
 
 Computers science is heavily attached to abstractions. If you work as a software engineer or in any software-related field, abstractions are present in your routine. I don't know any other area which deals with this level of abstraction, and like we always say: everything is a trade-off. Against us, is a big learning curve, dealing with philosophical concepts of virtual objects (yes, sometimes it is hard to work with things that don't exist in real life), and thousands of logics, models, architectures, data representations, and integrations. But, to our benefit, are the unmeasurable ways of dealing with such problems, applying knowledge from almost everything in the world. Sometimes, we even use the same words from other areas, or where do you think "deliveries", "tasks", "patches" and "releases" came from? And this is just the top of the mountain. Truth is, we stole a lot from other fields, but I think we are missing some points. Some very important points.
 
