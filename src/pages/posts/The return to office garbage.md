@@ -11,7 +11,7 @@ tags: ["RANT", "tech market"]
 ---
 ![Inside an office with people working](/office.jpg "Inside an office with people working")
 
-One of the best things that IT provides to people is freedom. There are 2 main types of freedom, which have more subtypes, but let's focus on the 3 big ones. Geographic freedom and financial freedom. The majority of IT workers have two, but some have just one or none of them. There isn't a way to say which one is better, personally speaking, one without the other is pretty useless. But the point is: in the last 3 years, the number of IT workers with these two types of freedom has improved. **A LOT.**
+One of the best things that IT provides to people is freedom. There are 2 main types of freedom, which have more subtypes, but let's focus on the 2 big ones. Geographic freedom and financial freedom. The majority of IT workers have two, but some have just one or none of them. There isn't a way to say which one is better, personally speaking, one without the other is pretty useless. But the point is: in the last 3 years, the number of IT workers with these two types of freedom has improved. **A LOT.**
 
 For those who started working with IT in the last 3 years or less, we haven't had these opportunities to work remotely since always. I started my career in 2017 and I worked on-site for 3 years, not because I chose, obviously, but because at that time, we didn't even think about this. Working remotely was WAY too far from us (with us, I mean the non-big-tech workers).
 
