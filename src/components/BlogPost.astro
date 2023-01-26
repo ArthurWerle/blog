@@ -1,17 +1,20 @@
 ---
 import { timestampToHuman } from "../utils/dates"
 
-const { title, url, date } = Astro.props
+const { title, url, date, minutesRead } = Astro.props
 const formattedDate = timestampToHuman(date)
 ---
 
-<li class="pd-0 list-none text-sm mb-1">
-  <div class="flex">
-    <div class="w-24"><time>{formattedDate}</time></div>
-    <a
-      href={url}
-      title={`Go to ${title}`}
-      class="border-b-2 border-b-gray-300 hover:border-b-black">{title}</a
-    >
+<li class="pd-0 list-none text-sm mb-4 flex flex-col-reverse">
+  <div class="flex text-[12px]">
+    <i><time datetime={date}>{formattedDate}</time></i>
+    <i class="mx-1">🞄</i>
+    <span>{minutesRead}</span>
   </div>
+
+  <a
+    href={url}
+    title={`Go to ${title}`}
+    class="border-b-2 border-b-gray-300 hover:border-b-black w-fit">{title}</a
+  >
 </li>
