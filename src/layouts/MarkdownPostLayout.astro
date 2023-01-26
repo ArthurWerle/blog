@@ -9,15 +9,19 @@ const formattedDate = timestampToHumanUTC(frontmatter.pubDate)
 
 <BaseLayout pageTitle={frontmatter.title}>
   <div class="flex mb-1">
-    <span class="text-sm mr-1">{frontmatter.author},</span>
-    <span class="text-sm mr-1"><time>{formattedDate}</time></span>
-    <span class="mr-1">🞄</span>
-    <span class="text-sm">{minutesRead}</span>
+    <i class="text-sm mr-1">{frontmatter.author},</i>
+    <i class="text-sm mr-1"
+      ><time datetime={frontmatter.pubDate}>{formattedDate}</time>
+    </i>
+    <i class="mr-1">🞄</i>
+    <i class="text-sm">{minutesRead}</i>
   </div>
 
   <div class="mb-5">
     <Tags tags={frontmatter.tags} />
   </div>
 
-  <slot />
+  <article class="prose text-lg list-disc">
+    <slot />
+  </article>
 </BaseLayout>

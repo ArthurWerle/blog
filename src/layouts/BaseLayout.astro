@@ -12,6 +12,12 @@ const isHome = path === ""
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/pc.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,300;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
     <meta name="viewport" content="width=device-width" />
     <meta
       name="description"
@@ -21,7 +27,7 @@ const isHome = path === ""
     <title>arthur werle</title>
   </head>
   <body
-    class="max-w-3xl mx-auto min-h-screen text-text-body bg-bg-body p-6 sm:p-8"
+    class="max-w-3xl mx-auto min-h-screen text-text-body bg-bg-body p-6 sm:p-8 selection:bg-zinc-600 selection:text-zinc-100"
   >
     {
       !isHome ? (
@@ -36,13 +42,9 @@ const isHome = path === ""
       ) : null
     }
     <h1
-      class="font-bold text-text-heading text-center pt-4 pb-2 overflow-hidden"
+      class="font-bold text-text-heading pt-4 pb-2 overflow-hidden text-3xl mb-4"
     >
-      <span
-        class="text-3xl bg-gradient-to-bl bg-no-repeat bg-bottom bg-[length:90%_40%] from-primary-blue to-primary-blue dark:from-primary-blue dark:to-primary-blue"
-      >
-        {pageTitle}
-      </span>
+      {pageTitle}
     </h1>
     <slot />
     <Footer />

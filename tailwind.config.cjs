@@ -19,19 +19,16 @@ module.exports = {
           muted: "rgb(var(--color-text-muted) / <alpha-value>)",
           code: "rgb(var(--color-text-code) / <alpha-value>)",
           link: "rgb(var(--color-text-link) / <alpha-value>)",
-          selection: "rgb(var(--color-text-selection) / <alpha-value>)",
         },
         bg: {
           body: "rgb(var(--color-bg-body) / <alpha-value>)",
           code: "rgb(var(--color-bg-code) / <alpha-value>)",
-          selection: "rgb(var(--color-bg-selection) / <alpha-value>)",
         },
         border: {
           code: "rgb(var(--color-border-code) / <alpha-value>)",
         },
       },
 			typography: (theme) => ({
-        DEFAULT: {
           css: {
             a: {
               "text-decoration": "none",
@@ -46,7 +43,7 @@ module.exports = {
             },
             ul: {
               "padding-left": 0,
-              "list-style": "none",
+              "list-style": "disc",
             },
             "ul > li": {
               position: "relative",
@@ -61,9 +58,6 @@ module.exports = {
             ol: {
               "padding-left": "1.125rem",
             },
-            "ol > li::marker": {
-              color: "rgb(var(--color-text-muted))",
-            },
             "h1, h2, h3, h4, h5": {
               color: "rgb(var(--color-text-heading))",
             },
@@ -74,7 +68,6 @@ module.exports = {
               content: "none",
             },
           },
-        },
       }),
 		},
 	},
