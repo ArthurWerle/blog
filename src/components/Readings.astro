@@ -2,6 +2,8 @@
 import { READINGS } from "../constants/readings"
 import StarIcon from "../icons/Star.astro"
 
+const { showReviews } = Astro.props
+
 function resolveRatingStars(rate) {
   return Array.from(Array(rate), () => StarIcon)
 }
@@ -21,11 +23,13 @@ function resolveRatingStars(rate) {
             </i>
           </p>
         </div>
-        <div class="flex">
-          {resolveRatingStars(book.rating).map((Icon) => (
-            <Icon isFilled size="15px" />
-          ))}
-        </div>
+        {showReviews ? (
+          <div class="flex">
+            {resolveRatingStars(book.rating).map((Icon) => (
+              <Icon isFilled size="15px" />
+            ))}
+          </div>
+        ) : null}
       </li>
     ))
   }
