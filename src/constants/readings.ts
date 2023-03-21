@@ -1,4 +1,7 @@
 export const READINGS = [
+  { title: "tristes trópicos", author: "claude levi-strauss", rating: 2 },
+  { title: "memórias póstumas de brás cubas", author: "machado de assis", rating: 4 },
+  { title: "extreme programming explained", author: "kent beck", rating: 2 },
   { title: "as dores do mundo", author: "schopenhauer", rating: 2 },
   {
     title: "who's in charge?: free will and the science of the brain",

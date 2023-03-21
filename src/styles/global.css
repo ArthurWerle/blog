@@ -6,6 +6,12 @@
   font-family: "Roboto Mono", sans-serif;
 }
 
+@layer base {
+  article > h1 {
+    text-align: initial;
+  }
+}
+
 html {
   /* #8AE6FB */
   --color-primary-blue: 138 230 251;
