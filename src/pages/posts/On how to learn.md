@@ -57,7 +57,7 @@ Speaking of my raspberry pi: the most fun and most usefull project I did **BY FA
  
 Another example? The blog you're reading this. I wanted to have a blog, so instead of using tools I already knew, I took the opportunity to learn Astro. Super fun.
  
-And just to mention other things I created for myself: chriptographed flash disks with digitalizations of some documents, app to help me to choose movies to watch (integrated with AI), app to help me divide my investments based on a strategy, app to centralize all my bookmarks of all social media. The new things I'm gonna create, I'm gonna take the opportunity to build using some tools like [Leptos]([Home - Leptos](https://leptos.dev/)) that let you build web applications with Rust. I'll also build something using WebAssembly. I still don't know why, but when the need of a new thing come up, I have those things I want to learn to use. 
+And just to mention other things I created for myself: chriptographed flash disks with digitalizations of some documents, app to help me to choose movies to watch (integrated with AI), app to help me divide my investments based on a strategy, app to centralize all my bookmarks of all social media. The new things I'm gonna create, I'm gonna take the opportunity to build using some tools like [Leptos](https://leptos.dev/) that let you build web applications with Rust. I'll also build something using WebAssembly. I still don't know why, but when the need of a new thing come up, I have those things I want to learn to use. 
 
 ### Have fun
 
