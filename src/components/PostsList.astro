@@ -15,13 +15,9 @@ const postsToDisplay = shouldSlice
 
 
 function comparePubDate(post1, post2) {
-  const date1 = new Date(
-    post1.frontmatter.pubDate.split("-").reverse().join("-")
-  )
+  const date1 = new Date(post1.frontmatter.pubDate)
 
-  const date2 = new Date(
-    post2.frontmatter.pubDate.split("-").reverse().join("-")
-  )
+  const date2 = new Date(post2.frontmatter.pubDate)
 
   return (date2.getTime() - date1.getTime()) as number;
 }
