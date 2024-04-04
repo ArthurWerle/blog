@@ -5,12 +5,26 @@ const allPosts = await Astro.glob("../pages/posts/*.md")
 
 const shouldSlice = size && size < allPosts.length
 
+const sortedPosts = allPosts.sort(comparePubDate)
 const postsToDisplay = shouldSlice
-  ? allPosts
+  ? sortedPosts
       .reverse()
       .slice(size - 1)
       .reverse()
-  : allPosts
+  : sortedPosts
+
+
+function comparePubDate(post1, post2) {
+  const date1 = new Date(
+    post1.frontmatter.pubDate.split("-").reverse().join("-")
+  )
+
+  const date2 = new Date(
+    post2.frontmatter.pubDate.split("-").reverse().join("-")
+  )
+
+  return (date2.getTime() - date1.getTime()) as number;
+}
 ---
 
 <ul class="mt-3">

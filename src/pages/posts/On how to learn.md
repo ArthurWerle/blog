@@ -7,7 +7,7 @@ author: "Arthur Werle"
 image:
   url: "/kids-studying.jpg"
   alt: "Kids studying in a school"
-tags: ["remote", "travel"]
+tags: ["learning"]
 ---
 ![Kids studying in a school](/kids-studying.jpg "Kids studying in a school")
 
