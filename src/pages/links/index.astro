@@ -24,6 +24,21 @@ const socialMedias = [
     // Icon: InstagramIcon,
   },
 ]
+
+const humorSocialMedias = [
+  {
+    platform: "youtube",
+    username: "@tvsindicalista",
+    label: "YouTube",
+    // Icon: InstagramIcon,
+  },
+  {
+    platform: "tiktok",
+    username: "@tvsindicalista",
+    label: "tiktok",
+    // Icon: TwitterIcon,
+  },
+]
 ---
 
 <BaseLayout pageTitle={pageTitle}>
@@ -49,6 +64,23 @@ const socialMedias = [
           </a>
         ))
       }
+
+      <h2>meu canal de humor</h2>
+      {
+        humorSocialMedias.map(({ platform, username, label }) => (
+          <a 
+            class="rounded border-2 border-black px-10 py-2 text-center animated-link underline" 
+            href={`https://www.${platform}.com/${username}`}
+            target="_blank"
+            title={`access arthur's profile on ${platform}`}
+          >
+            <span class="unset align-middle gap-1 text-sm text-center block">
+              {label ? label : platform}
+            </span>
+          </a>
+        ))
+      }
     </div>
+
   </div>
 </BaseLayout>
