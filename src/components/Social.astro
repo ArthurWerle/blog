@@ -1,38 +1,38 @@
 ---
-import TwitterIcon from "../icons/Twitter.astro"
-import GithubIcon from "../icons/Github.astro"
-import InstagramIcon from "../icons/Instagram.astro"
-import LinkedinIcon from "../icons/Linkedin.astro"
+import GoToIcon from "../icons/GoTo.astro"
 
 const socialMedias = [
   {
     platform: "linkedin",
     username: "in/arthur-werle-a8635a114/",
-    label: "lnkdin",
-    Icon: LinkedinIcon,
+    label: "Linkedin",
+    Icon: GoToIcon,
   },
   {
     platform: "github",
     username: "ArthurWerle",
-    label: "gthb",
-    Icon: GithubIcon,
+    label: "Github",
+    Icon: GoToIcon,
   },
   {
     platform: "instagram",
     username: "werlearthur/",
-    label: "instgrm",
-    Icon: InstagramIcon,
-  },
-  {
-    platform: "twitter",
-    username: "werlearthur",
-    label: "twttr",
-    Icon: TwitterIcon,
+    label: "Instagram",
+    Icon: GoToIcon,
   },
 ]
 ---
 
 <div class="flex gap-3">
+  <a
+    class="unset animated-link underline flex align-middle gap-1 text-sm"
+    href="arthur-resume.pdf"
+    title="Download Arthur's resume"
+    download
+  >
+    CV
+    <i class="inline-block align-[-2px] rotate-[135deg]"><GoToIcon /></i>
+  </a>
   {
     socialMedias.map(({ platform, username, label, Icon }) => (
       <a
@@ -41,8 +41,8 @@ const socialMedias = [
         target="_blank"
         title={`access arthur's profile on ${platform}`}
       >
-        <Icon />
         {label ? label : platform}
+        <Icon />
       </a>
     ))
   }

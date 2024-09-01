@@ -1,98 +1,20 @@
 ---
 export const prerender = true
 import BaseLayout from "../layouts/BaseLayout.astro"
-import TwitterIcon from "../icons/Twitter.astro"
-import GithubIcon from "../icons/Github.astro"
-import InstagramIcon from "../icons/Instagram.astro"
-import LinkedinIcon from "../icons/Linkedin.astro"
 import FileIcon from "../icons/File.astro"
-import CalendarIcon from "../icons/Calendar.astro"
 import PostsList from "../components/PostsList.astro"
-import Readings from "../components/Readings.astro"
+import GoToIcon from "../icons/GoTo.astro"
 
 const pageTitle = "Arthur Werle"
 ---
 
 <BaseLayout pageTitle={pageTitle}>
   <h2 class="text-md font-bold">I build the things I wish existed.</h2>
-  <p class="text-sm pb-4">
-    software engineer. problem solver. movies, cooking, tech and lowercase typing enthusiast.
-  </p>
-  <p class="text-sm">
-    find my codes on
-    <a
-      class="underline"
-      href="https://www.github.com/ArthurWerle"
-      title="Go to Arthur's Github profile"
-      target="_blank"
-    >
-      github
-      <i class="inline-block align-[-2px]"><GithubIcon size="15px" /></i>
-    </a>
-  </p>
-  <p class="text-sm">
-    see me joking and daily talking on
-    <a
-      class="underline"
-      href="https://www.twitter.com/werlearthur"
-      title="Go to Arthur's Twitter profile"
-      target="_blank"
-      >twitter
-    </a>
-    <i class="inline-block align-[-2px]">
-      <TwitterIcon size="15px" />
-    </i>
-  </p>
-  <p class="text-sm">
-    music stories and real life on my
-    <a
-      class="underline"
-      href="https://www.instagram.com/werlearthur"
-      title="Go to Arthur's Instagram profile"
-      target="_blank"
-      >instagram
-      <i class="inline-block align-[-2px]"><InstagramIcon size="15px" /></i>
-    </a>
-  </p>
-  <p class="text-sm">
-    about work:
-    <a
-      class="underline"
-      href="https://www.linkedin.com/in/arthur-werle-a8635a114/"
-      title="Go to Arthur's Linkedin profile"
-      target="_blank"
-      >linkedin <i class="inline-block align-[-2px]"
-        ><LinkedinIcon size="15px" />
-      </i>
-    </a>
-  </p>
-  <p class="text-sm">email me at <i>arthur.werle@gmail.com</i></p>
-  <p class="text-sm">
-    download my
-    <a
-      class="underline"
-      href="arthur-resume.pdf"
-      title="Download Arthur's resume"
-      download
-    >
-      resume
-      <i class="inline-block align-[-2px]"><FileIcon size="15px" /></i>
-    </a>
-  </p>
-  <p class="text-sm">
-    want to talk about work? feel free to
-    <a
-      href="https://calendly.com/arthurwerle/meeting"
-      title="Go to Arthur's Calendly profile"
-      target="_blank"
-      class="underline"
-    >
-      book a call
-      <i class="inline-block align-[-2px]"><CalendarIcon size="15px" /></i>
-    </a>
+  <p class="text-sm pb-4 mt-4">
+    currently I craft software for <a class="unset animated-link underline align-middle gap-1 text-sm font-bold inline" href="https://www.claravine.com" target="_blank">Claravine</a> where I translate complex business needs into simple user experiences.
   </p>
   <div class="mt-10">
-    <h2 class="font-bold">lastest writings</h2>
+    <h2 class="font-bold">Posts</h2>
     <PostsList size={10} />
   </div>
 </BaseLayout>

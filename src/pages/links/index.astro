@@ -6,37 +6,34 @@ const pageTitle = "Links"
 
 const socialMedias = [
   {
-    platform: "youtube",
-    username: "@werlearthur",
+    url: "https://www.youtube.com",
+    username: "@werlearthurr",
     label: "YouTube",
     // Icon: InstagramIcon,
   },
   {
-    platform: "twitter",
+    url: "https://www.x.com",
     username: "werlearthur",
-    label: "Twitter",
+    label: "X",
     // Icon: TwitterIcon,
   },
   {
-    platform: "instagram",
+    url: "https://www.instagram.com",
     username: "werlearthur",
     label: "Instagram",
     // Icon: InstagramIcon,
   },
-]
-
-const humorSocialMedias = [
   {
-    platform: "youtube",
-    username: "@tvsindicalista",
-    label: "YouTube",
+    url: "https://www.threads.net/",
+    username: "@werlearthur",
+    label: "Threads",
     // Icon: InstagramIcon,
   },
   {
-    platform: "tiktok",
-    username: "@tvsindicalista",
-    label: "tiktok",
-    // Icon: TwitterIcon,
+    url: "https://bsky.app/",
+    username: "profile/werlearthur.bsky.social",
+    label: "Blue Sky",
+    // Icon: InstagramIcon,
   },
 ]
 ---
@@ -45,37 +42,21 @@ const humorSocialMedias = [
   <div class="flex flex-col items-center justify-center mt-6 p-[20px]">
     <img 
       src="/profile.jpg" 
-      class="rounded-full md:w-[200px] md:h-[200px] w-[150px] h-[150px] object-cover mb-4 border-4 border-black" 
+      class="rounded-full md:w-[200px] md:h-[200px] w-[150px] h-[150px] object-cover mb-4" 
       alt="Arthur Werle's profile picture"
     />
     <h1 class="mb-10">meus links :)</h1>
     <div class="flex flex-col gap-4">
       {
-        socialMedias.map(({ platform, username, label }) => (
+        socialMedias.map(({ url, username, label }) => (
           <a 
             class="rounded border-2 border-black px-10 py-2 text-center animated-link underline" 
-            href={`https://www.${platform}.com/${username}`}
+            href={`${url}/${username}`}
             target="_blank"
-            title={`access arthur's profile on ${platform}`}
+            title={`access arthur's profile on ${label}`}
           >
             <span class="unset align-middle gap-1 text-sm text-center block">
-              {label ? label : platform}
-            </span>
-          </a>
-        ))
-      }
-
-      <h2>meu canal de humor</h2>
-      {
-        humorSocialMedias.map(({ platform, username, label }) => (
-          <a 
-            class="rounded border-2 border-black px-10 py-2 text-center animated-link underline" 
-            href={`https://www.${platform}.com/${username}`}
-            target="_blank"
-            title={`access arthur's profile on ${platform}`}
-          >
-            <span class="unset align-middle gap-1 text-sm text-center block">
-              {label ? label : platform}
+              {label}
             </span>
           </a>
         ))
