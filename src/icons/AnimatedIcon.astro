@@ -1,0 +1,33 @@
+---
+const { size = "20px" } = Astro.props;
+---
+
+<div class="relative flex items-center justify-center w-8 h-8">
+  <div class="absolute w-15 h-15 -inset-8 rounded-full bg-gradient-to-br from-orange-500/30 to-white/30 blur-2xl animate-pulse" />
+  <div class="absolute w-12 h-12 -inset-4 rounded-full bg-gradient-to-br from-orange-500/40 to-white/40 blur-xl animate-glow" />
+  <div class="relative w-8 h-8 rounded-full bg-gradient-to-br from-orange-500 to-white shadow-lg" />
+</div>
+
+<style>
+  .animate-glow {
+    animation: moveGlow 8s ease-in-out infinite;
+  }
+
+  @keyframes moveGlow {
+    0% {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translate(-8px, -8px);
+    }
+    50% {
+      transform: translate(8px, 8px);
+    }
+    75% {
+      transform: translate(8px, -8px);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+</style>

@@ -21,17 +21,82 @@ const socialMedias = [
     Icon: GoToIcon,
   },
 ]
+
 ---
 
 <div class="flex gap-3">
+  <a class="relative inline-block group" href="arthur-resume.pdf"
+  title="Download Arthur's resume"
+  download>
+    <!-- Outermost glow layer -->
+    <div class="absolute -inset-6 blur-3xl animate-pulse-slow transition-all duration-300 group-hover:-inset-8 group-hover:blur-[60px]">
+      <span class="text-sm font-bold bg-gradient-to-br from-orange-500/20 to-white/20 bg-clip-text text-transparent group-hover:from-orange-500/40 group-hover:to-white/40">
+        styled CV :)
+      </span>
+    </div>
+    
+    <!-- Large outer glow -->
+    <div class="absolute -inset-4 blur-2xl animate-pulse transition-all duration-300 group-hover:-inset-6 group-hover:blur-[40px]">
+      <span class="text-sm font-bold bg-gradient-to-br from-orange-500/30 to-white/30 bg-clip-text text-transparent group-hover:from-orange-500/60 group-hover:to-white/60">
+        styled CV :)
+      </span>
+    </div>
+    
+    <!-- Medium glow -->
+    <div class="absolute -inset-3 blur-xl animate-subtle-pulse transition-all duration-300 group-hover:-inset-4 group-hover:blur-2xl">
+      <span class="text-sm font-bold bg-gradient-to-br from-orange-500/40 to-white/40 bg-clip-text text-transparent group-hover:from-orange-500/70 group-hover:to-white/70">
+        styled CV :)
+      </span>
+    </div>
+    
+    <!-- Inner glow -->
+    <div class="absolute -inset-2 blur-lg animate-pulse-fast transition-all duration-300 group-hover:-inset-3 group-hover:blur-xl">
+      <span class="text-sm font-bold bg-gradient-to-br from-orange-500/50 to-white/50 bg-clip-text text-transparent group-hover:from-orange-500/80 group-hover:to-white/80">
+        styled CV :)
+      </span>
+    </div>
+    
+    <!-- Main text -->
+    <span class="relative text-sm font-bold bg-gradient-to-br from-orange-500 to-white bg-clip-text text-transparent transition-all duration-300 group-hover:from-orange-400 group-hover:to-white">
+      styled CV :)
+    </span>
+    
+    <style>
+      @keyframes subtle-pulse {
+        0%, 100% { opacity: 0.6; }
+        50% { opacity: 0.9; }
+      }
+      
+      @keyframes pulse-slow {
+        0%, 100% { opacity: 0.4; }
+        50% { opacity: 0.7; }
+      }
+      
+      @keyframes pulse-fast {
+        0%, 100% { opacity: 0.7; }
+        50% { opacity: 1; }
+      }
+      
+      .animate-subtle-pulse {
+        animation: subtle-pulse 3s ease-in-out infinite;
+      }
+      
+      .animate-pulse-slow {
+        animation: pulse-slow 4s ease-in-out infinite;
+      }
+      
+      .animate-pulse-fast {
+        animation: pulse-fast 2s ease-in-out infinite;
+      }
+    </style>
+  </a>
   <a
-    class="unset animated-link underline flex align-middle gap-1 text-sm"
+    class="unset animated-link underline flex align-middle gap-1 text-sm relative"
     href="arthur-resume.pdf"
     title="Download Arthur's resume"
     download
   >
-    CV
-    <i class="inline-block align-[-2px] rotate-[135deg]"><GoToIcon /></i>
+    <span class="relative z-10">boring text CV</span>
   </a>
   {
     socialMedias.map(({ platform, username, label, Icon }) => (

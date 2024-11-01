@@ -1,9 +1,10 @@
 ---
 import Footer from "../components/Footer.astro"
 import ArrowLeftIcon from "../icons/ArrowLeft.astro"
+import AnimatedIcon from "../icons/AnimatedIcon.astro"
 import "../styles/global.css"
 const DEFAULT_DESCRIPTION =
-  "Arthur Werle is a software engineer who loves reading, writing and sharing things."
+  "Arthur Werle is a software engineer."
 const { pageTitle, description, image = {} } = Astro.props
 
 const path = Astro.url.pathname.replace(/\/$/, "")
@@ -47,18 +48,24 @@ const showPageFooter = !isLinksPage
         </a>
       ) : null
     }
-    <div class="flex gap-5 items-center mb-4">
+    <div class="flex gap-5 items-center mb-10">
       {isHome && 
-        <img 
-          src="/profile.jpg" 
-          class="rounded-full md:w-[50px] md:h-[50px] w-[150px] h-[150px] object-cover" 
-          alt="Arthur Werle's profile picture"
-        />
+        <div class="flex items-center justify-center gap-3">
+              <AnimatedIcon />
+            <div>
+              <h1
+                class="font-bold text-text-heading overflow-hidden text-3xl text-[#e6cfa1]"
+                >
+                {pageTitle}
+                <h2 class="text-md font-bold text-[#c97f2a]">I build the things I wish existed.</h2>
+              </h1>
+            </div>
+          </div>
       }
       {
-        showPageTitle ? (
+        showPageTitle && !isHome ? (
           <h1
-            class="font-bold text-text-heading pt-4 pb-2 overflow-hidden text-3xl"
+            class="font-bold pt-4 pb-2 overflow-hidden text-3xl text-[#c97f2a]"
           >
             {pageTitle}
           </h1>

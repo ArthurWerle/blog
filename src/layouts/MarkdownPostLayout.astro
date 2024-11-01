@@ -12,7 +12,7 @@ const formattedDate = timestampToHumanUTC(frontmatter.pubDate)
   description={frontmatter.description}
   image={frontmatter.image}
 >
-  <div class="flex mb-1">
+  <div class="flex mb-1 text-[#787777]">
     <i class="text-sm mr-1">{frontmatter.author},</i>
     <i class="text-sm mr-1"
       ><time datetime={frontmatter.pubDate}>{formattedDate}</time>

@@ -19,6 +19,7 @@ module.exports = {
           muted: "rgb(var(--color-text-muted) / <alpha-value>)",
           code: "rgb(var(--color-text-code) / <alpha-value>)",
           link: "rgb(var(--color-text-link) / <alpha-value>)",
+          highlighted: "rgb(var(--color-text-highlighted) / <alpha-value>)", 
         },
         bg: {
           body: "rgb(var(--color-bg-body) / <alpha-value>)",
@@ -29,6 +30,12 @@ module.exports = {
         },
       },
 			typography: (theme) => ({
+          DEFAULT: {
+            css: {
+              "--tw-prose-headings": "#c97f2a",
+              "--tw-prose-body": "#e6cfa1"
+            }
+          },
           css: {
             a: {
               "text-decoration": "none",

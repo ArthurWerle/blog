@@ -1,20 +1,17 @@
 ---
 export const prerender = true
 import BaseLayout from "../layouts/BaseLayout.astro"
-import FileIcon from "../icons/File.astro"
 import PostsList from "../components/PostsList.astro"
-import GoToIcon from "../icons/GoTo.astro"
 
 const pageTitle = "Arthur Werle"
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <h2 class="text-md font-bold">I build the things I wish existed.</h2>
   <p class="text-sm pb-4 mt-4">
-    currently I craft software for <a class="unset animated-link underline align-middle gap-1 text-sm font-bold inline" href="https://www.claravine.com" target="_blank">Claravine</a> where I translate complex business needs into simple user experiences.
+    currently I craft software for <a class="unset animated-link underline align-middle gap-1 text-sm font-bold inline text-[#c97f2a]" href="https://www.claravine.com" target="_blank">Claravine</a> where I translate complex business needs into simple user experiences.
   </p>
   <div class="mt-10">
-    <h2 class="font-bold">Posts</h2>
+    <h2 class="font-bold text-[#c97f2a]">Posts</h2>
     <PostsList size={10} />
   </div>
 </BaseLayout>

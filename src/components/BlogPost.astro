@@ -6,7 +6,7 @@ const formattedDate = timestampToHuman(date)
 ---
 
 <li class="pd-0 list-none text-sm mb-4 flex flex-col-reverse">
-  <div class="flex text-[12px]">
+  <div class="flex text-[12px] text-[#787777]">
     <i><time datetime={date}>{formattedDate}</time></i>
     <i class="mx-1">//</i>
     <span>{minutesRead}</span>
@@ -15,6 +15,6 @@ const formattedDate = timestampToHuman(date)
   <a
     href={url}
     title={`Go to ${title}`}
-    class="border-b-2 border-b-gray-300 hover:border-b-black w-fit">{title}</a
+    class="border-b-2 border-b-[#e6cfa1] hover:border-b-[#c97f2a] w-fit">{title}</a
   >
 </li>
