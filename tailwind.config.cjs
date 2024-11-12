@@ -2,6 +2,13 @@
 module.exports = {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
+    fontFamily: {
+      'dela': ['Dela Gothic One', 'serif'],
+      'big-shoulders': ['Big Shoulders Text', 'serif'],
+      'instrument': ['Instrument Serif', 'serif'],
+      'inter': ['Inter', 'serif'],
+
+    },
 		extend: {
 			colors: {
         transparent: "transparent",
