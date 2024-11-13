@@ -1,20 +1,30 @@
 ---
 import { timestampToHuman } from "../utils/dates"
 
-const { title, url, date, minutesRead } = Astro.props
+const { title, url, date, minutesRead, imageUrl } = Astro.props
 const formattedDate = timestampToHuman(date)
 ---
 
-<li class="pd-0 list-none text-sm mb-4 flex flex-col-reverse">
-  <div class="flex text-[12px] text-[#787777]">
-    <i><time datetime={date}>{formattedDate}</time></i>
-    <i class="mx-1">//</i>
-    <span>{minutesRead}</span>
-  </div>
-
-  <a
-    href={url}
-    title={`Go to ${title}`}
-    class="border-b-2 border-b-[#e6cfa1] hover:border-b-[#c97f2a] w-fit">{title}</a
+<li class="pd-0 list-none text-sm mb-6 flex transition-transform duration-200 hover:scale-[1.05]">
+  <a 
+    title={`Go to ${title}`} 
+    href={url} 
+    class="flex align-top items-start gap-6 border border-transparent hover:border-red rounded-[15px] transition-all duration-200 w-full"
   >
+    <div class="w-[250px] h-[150px] flex-shrink-0">
+      <img 
+        class="rounded-[15px] w-full h-full object-cover" 
+        src={imageUrl} 
+        alt={title}
+      />
+    </div>
+    <div class="flex flex-col-reverse gap-2">
+      <div class="flex text-[12px] text-[#787777]">
+        <i><time datetime={date}>{formattedDate}</time></i>
+        <i class="mx-1">//</i>
+        <span>{minutesRead}</span>
+      </div>      
+      <h3 class="font-dela text-xl">{title}</h3>
+    </div>
+  </a>
 </li>

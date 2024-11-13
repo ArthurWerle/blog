@@ -2,6 +2,7 @@
 export const prerender = true
 import BaseLayout from "../layouts/BaseLayout.astro"
 import PostsList from "../components/PostsList.astro"
+import Projects from "../components/Projects.astro"
 
 const pageTitle = "Arthur Werle"
 ---
@@ -9,11 +10,14 @@ const pageTitle = "Arthur Werle"
 <BaseLayout pageTitle={pageTitle}>
   <p class="text-xl pb-4 mt-4">
     currently crafting software for 
-    <a class="unset animated-link underline gap-1 text-2xl inline text-[#c97f2a] font-instrument mb-[-8px]" href="https://www.claravine.com" target="_blank">Claravine</a> 
+    <a class="unset animated-link underline gap-1 text-2xl inline text-[#c97f2a] font-instrument mb-[-8px] font-bold" href="https://www.claravine.com" target="_blank">Claravine</a> 
     where I translate complex business needs into simple user experiences.
   </p>
-  <div class="mt-10">
+  <section class="mt-10">
+    <Projects />
+  </section>
+  <section class="mt-10">
     <h2 class="text-[#c97f2a] font-dela text-2xl">Posts</h2>
     <PostsList size={10} />
-  </div>
+  </section>
 </BaseLayout>

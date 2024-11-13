@@ -40,7 +40,22 @@ module.exports = {
           DEFAULT: {
             css: {
               "--tw-prose-headings": "#c97f2a",
-              "--tw-prose-body": "#e6cfa1"
+              "--tw-prose-body": "#e6cfa1",
+              "--tw-prose-bold": "#c97f2a",
+              "--tw-prose-links": "#c97f2a",
+              "--tw-prose-quotes": "#c97f2a",
+              h1: {
+                'font-family': 'Dela Gothic One, serif',
+                'font-weight': 100,
+              },
+              h2: {
+                'font-family': 'Dela Gothic One, serif',
+                'font-weight': 100,
+              },
+              h3: {
+                'font-family': 'Dela Gothic One, serif',
+                'font-weight': 100,
+              },
             }
           },
           css: {
