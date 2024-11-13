@@ -3,21 +3,30 @@ export const prerender = true
 import BaseLayout from "../layouts/BaseLayout.astro"
 import PostsList from "../components/PostsList.astro"
 import Projects from "../components/Projects.astro"
+import AnimatedSection from '../components/AnimatedSection.astro'
 
 const pageTitle = "Arthur Werle"
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <p class="text-xl pb-4 mt-4">
-    currently crafting software for 
-    <a class="unset animated-link underline gap-1 text-2xl inline text-[#c97f2a] font-instrument mb-[-8px] font-bold" href="https://www.claravine.com" target="_blank">Claravine</a> 
-    where I translate complex business needs into simple user experiences.
-  </p>
-  <section class="mt-10">
-    <Projects />
-  </section>
-  <section class="mt-10">
-    <h2 class="text-[#c97f2a] font-dela text-2xl">Posts</h2>
-    <PostsList size={10} />
-  </section>
+  <AnimatedSection delay={300}>
+    <p class="text-xl pb-4 mt-4">
+      Currently crafting software for 
+      <a class="unset animated-link underline gap-1 text-2xl inline text-emphasis font-instrument mb-[-8px] font-bold" href="https://www.claravine.com" target="_blank">Claravine</a> 
+      where I translate complex business needs into simple user experiences.
+    </p>
+  </AnimatedSection>
+
+  <AnimatedSection delay={600}>
+    <section class="mt-10">
+      <Projects numberOfProjectsToShow={4} />
+    </section>
+  </AnimatedSection>
+
+  <AnimatedSection delay={900}>
+    <section class="mt-10">
+      <h2 class="text-emphasis font-dela text-2xl">Posts</h2>
+      <PostsList size={10} />
+    </section>
+  </AnimatedSection>
 </BaseLayout>

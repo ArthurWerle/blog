@@ -1,5 +1,8 @@
 ---
 import { Octokit } from "octokit"
+import GoToIcon from "../icons/GoTo.astro"
+
+const { numberOfProjectsToShow } = Astro.props
 
 const octokit = new Octokit({ 
   auth: import.meta.env.PUBLIC_GH_TOKEN,
@@ -13,29 +16,36 @@ const response = await octokit.request("GET /users/{username}/repos", {
   }
 })
 
-const reposToDisplay = response?.data?.slice(0, 3) || []
 
-console.log({ reposToDisplay })
+const reposToDisplay = response?.data?.slice(0, numberOfProjectsToShow || 3) || []
 
-if (!reposToDisplay) return null
-// const { showReviews } = Astro.props
+const hasNoData = !response?.data || !response?.data?.length || !reposToDisplay?.length
 ---
-
-<section>
-  <h2 class="text-2xl font-dela text-[#c97f2a]">
-    Thing I'm building lately
-  </h2>
-
-  <ul class="mt-3 flex flex-col gap-4">
-    {
-      reposToDisplay.map((repo) => (
-        <a href={repo.html_url} class="flex transition-transform duration-200 hover:scale-[1.01]" target="_blank">
-          <div>
-            <h3 class="font-dela text-xl">{repo.name}</h3>
-            {repo.description ? (<p class="font-instrument text-lg">{repo.description}</p>) : null}
-          </div>
+{hasNoData ? null : (
+  <section>
+    <h2 class="text-2xl font-dela text-emphasis">
+      Thing I'm building lately
+    </h2>
+  
+    <ul class="mt-3 flex flex-col gap-4">
+      {
+        reposToDisplay.map((repo) => (
+          <li>
+            <a href={repo.html_url} class="flex transition-transform duration-200 hover:scale-[1.01]" target="_blank">
+              <div>
+                <h3 class="font-dela text-xl">{repo.name}</h3>
+                {repo.description ? (<p class="font-inter italic text-md text-description">{repo.description}</p>) : null}
+              </div>
+            </a>
+          </li>
+        ))
+      }
+      <li>
+        <a href="https://www.github.com/ArthurWerle" class="font-instrument text-2xl flex gap-2 items-center transition-transform duration-200 hover:scale-[1.01]" target="_blank">
+          More on Github
+          <GoToIcon />
         </a>
-      ))
-    }
-  </ul>
-</section>
+      </li>
+    </ul>
+  </section>
+)}

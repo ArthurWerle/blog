@@ -13,6 +13,8 @@ module.exports = {
 			colors: {
         transparent: "transparent",
         current: "currentColor",
+        emphasis: "#c97f2a",
+        description: "#787777",
         primary: {
           blue: "rgb(var(--color-primary-blue) / <alpha-value>)",
           green: "rgb(var(--color-primary-green) / <alpha-value>)",
