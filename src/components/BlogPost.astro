@@ -9,9 +9,9 @@ const formattedDate = timestampToHuman(date)
   <a 
     title={`Go to ${title}`} 
     href={url} 
-    class="flex align-top items-start gap-6 border border-transparent hover:border-red rounded-[15px] transition-all duration-200 w-full"
+    class="flex align-top items-start gap-3 md:gap-6 border border-transparent hover:border-red rounded-[15px] transition-all duration-200 w-full"
   >
-    <div class="w-[250px] h-[150px] flex-shrink-0">
+    <div class="w-[100px] h-[70px] md:w-[250px] md:h-[150px] flex-shrink-0">
       <img 
         class="rounded-[15px] w-full h-full object-cover" 
         src={imageUrl} 
@@ -24,7 +24,7 @@ const formattedDate = timestampToHuman(date)
         <i class="mx-1">//</i>
         <span>{minutesRead}</span>
       </div>      
-      <h3 class="font-dela text-xl">{title}</h3>
+      <h3 class="font-dela text-sm md:text-xl">{title}</h3>
     </div>
   </a>
 </li>

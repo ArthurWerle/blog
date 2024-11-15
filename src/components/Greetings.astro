@@ -1,0 +1,20 @@
+---
+import AnimatedSection from "./AnimatedSection.astro"
+import AnimatedIcon from "../icons/AnimatedIcon.astro"
+
+const { pageTitle } = Astro.props
+---
+
+<AnimatedSection delay={0}>
+  <div class="flex items-center justify-center gap-3">
+    <AnimatedIcon />
+    <div>
+      <h1
+        class="overflow-hidden"
+        >
+        <span class="font-dela text-3xl md:text-5xl">{pageTitle}</span>
+        <h2 class="text-2xl font-bold text-emphasis font-instrument">I build the things I wish existed.</h2>
+      </h1>
+    </div>
+  </div>
+</AnimatedSection>
