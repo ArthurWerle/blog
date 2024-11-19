@@ -23,7 +23,7 @@ const hasNoData = !response?.data || !response?.data?.length || !reposToDisplay?
 ---
 {hasNoData ? null : (
   <section>
-    <h2 class="text-2xl font-dela text-emphasis">
+    <h2 class="text-xl md:text-2xl font-dela text-emphasis">
       Thing I'm building lately
     </h2>
   
@@ -33,15 +33,15 @@ const hasNoData = !response?.data || !response?.data?.length || !reposToDisplay?
           <li>
             <a href={repo.html_url} class="flex transition-transform duration-200 hover:scale-[1.01]" target="_blank">
               <div>
-                <h3 class="font-dela text-xl">{repo.name}</h3>
-                {repo.description ? (<p class="font-inter italic text-md text-description">{repo.description}</p>) : null}
+                <h3 class="font-dela text-lg md:text-xl">{repo.name}</h3>
+                {repo.description ? (<p class="font-inter italic text-sm md:text-md text-description">{repo.description}</p>) : null}
               </div>
             </a>
           </li>
         ))
       }
       <li>
-        <a href="https://www.github.com/ArthurWerle" class="font-instrument text-2xl flex gap-2 items-center transition-transform duration-200 hover:scale-[1.01]" target="_blank">
+        <a href="https://www.github.com/ArthurWerle" class="font-instrument text-xl md:text-2xl flex gap-2 items-center transition-transform duration-200 hover:scale-[1.01]" target="_blank">
           More on Github
           <GoToIcon />
         </a>

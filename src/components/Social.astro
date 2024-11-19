@@ -24,7 +24,7 @@ const socialMedias = [
 
 ---
 
-<div class="flex gap-3">
+<div class="flex gap-3 flex-wrap md:flex-nowrap justify-center md:justify-start">
   <a
     class="unset animated-link underline flex align-middle gap-1 text-sm relative"
     href="arthur-werle-CV.pdf"
@@ -32,6 +32,7 @@ const socialMedias = [
     download
   >
     <span class="relative z-10">download my CV</span>
+    <GoToIcon className="rotate-180" />
   </a>
   {
     socialMedias.map(({ platform, username, label, Icon }) => (
