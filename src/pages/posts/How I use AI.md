@@ -16,11 +16,13 @@ AI has become an integral part of my daily workflow, both professionally and per
 ## Professional Toolkit
 At work, I rely on ChatGPT and Claude for multiple critical tasks:
 - Generating innovative ideas
-- Making architectural decisions
+- Help in architectural decisions
 - Explaining complex code
 - Optimizing performance
 - Refactoring existing code
-- Writing comprehensive test suites
+- Writing test suites for components
+- Creating boilerplate and mocks
+- Debugging
 
 ## Personal Development
 Beyond work, AI assists me in continuous learning:
