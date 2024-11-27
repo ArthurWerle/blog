@@ -9,6 +9,7 @@ image:
   alt: "AI apps on a smartphone screen"
 tags: ["learning", "tools", "AI"]
 ---
+![AI apps on a smartphone screen](/ai.png "AI apps on a smartphone screen")
 
 AI has become an integral part of my daily workflow, both professionally and personally. Here's how I leverage various AI tools to enhance productivity and learning:
 
