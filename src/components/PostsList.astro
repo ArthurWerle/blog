@@ -1,5 +1,6 @@
 ---
 import BlogPost from "../components/BlogPost.astro"
+import GoToIcon from "../icons/GoTo.astro"
 const { size } = Astro.props
 const allPosts = await Astro.glob("../pages/posts/*.md")
 
@@ -27,10 +28,17 @@ function comparePubDate(post1, post2) {
       <BlogPost
         url={post.url}
         title={post.frontmatter.title}
+        description={post.frontmatter.description}
         date={post.frontmatter.pubDate}
         imageUrl={post.frontmatter.image.url}
         minutesRead={post.frontmatter.minutesRead}
       />
     ))
   }
+  <li>
+    <a href="https://www.arthurwerle.com.br/writings" class="font-instrument text-xl md:text-2xl flex gap-2 items-center transition-transform duration-200 hover:scale-[1.01]">
+      See all posts
+      <GoToIcon />
+    </a>
+  </li>
 </ul>
