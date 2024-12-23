@@ -17,6 +17,9 @@ importers:
       '@astrojs/vercel':
         specifier: ^3.0.0
         version: 3.0.0(astro@2.0.0)
+      '@tailwindcss/line-clamp':
+        specifier: ^0.4.4
+        version: 0.4.4(tailwindcss@3.2.4(postcss@8.4.20))
       '@tailwindcss/typography':
         specifier: ^0.5.8
         version: 0.5.8(tailwindcss@3.2.4(postcss@8.4.20))
@@ -488,6 +491,11 @@ packages:
   '@rollup/pluginutils@4.2.1':
     resolution: {integrity: sha512-iKnFXr7NkdZAIHiIWE+BX5ULi/ucVFYWD6TbAV+rZctiRTY2PL6tsIKhoIOaoskiWAkgu+VsbXgUVDNLHf+InQ==}
     engines: {node: '>= 8.0.0'}
+
+  '@tailwindcss/line-clamp@0.4.4':
+    resolution: {integrity: sha512-5U6SY5z8N42VtrCrKlsTAA35gy2VSyYtHWCsg1H87NU1SXnEfekTVlrga9fzUDrrHcGi2Lb5KenUWb4lRQT5/g==}
+    peerDependencies:
+      tailwindcss: '>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1'
 
   '@tailwindcss/typography@0.5.8':
     resolution: {integrity: sha512-xGQEp8KXN8Sd8m6R4xYmwxghmswrd0cPnNI2Lc6fmrC3OojysTBJJGSIVwPV56q4t6THFUK3HJ0EaWwpglSxWw==}
@@ -2640,6 +2648,10 @@ snapshots:
     dependencies:
       estree-walker: 2.0.2
       picomatch: 2.3.1
+
+  '@tailwindcss/line-clamp@0.4.4(tailwindcss@3.2.4(postcss@8.4.20))':
+    dependencies:
+      tailwindcss: 3.2.4(postcss@8.4.20)
 
   '@tailwindcss/typography@0.5.8(tailwindcss@3.2.4(postcss@8.4.20))':
     dependencies:
