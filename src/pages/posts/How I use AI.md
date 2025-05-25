@@ -7,14 +7,17 @@ author: "Arthur Werle"
 image:
   url: "/ai.png"
   alt: "AI apps on a smartphone screen"
-tags: ["learning", "tools", "AI"]
+tags: ["learning", "tools", "AI", "shorts"]
 ---
+
 ![AI apps on a smartphone screen](/ai.png "AI apps on a smartphone screen")
 
 AI has become an integral part of my daily workflow, both professionally and personally. Here's how I leverage various AI tools to enhance productivity and learning:
 
 ## Professional Toolkit
+
 At work, I rely on ChatGPT and Claude for multiple critical tasks:
+
 - Generating innovative ideas
 - Help in architectural decisions
 - Explaining complex code
@@ -25,14 +28,18 @@ At work, I rely on ChatGPT and Claude for multiple critical tasks:
 - Debugging
 
 ## Personal Development
+
 Beyond work, AI assists me in continuous learning:
+
 - Deep-diving into study topics
 - Exploring and debating ideas
 - Getting detailed explanations on diverse subjects
 - Satisfying intellectual curiosity
 
 ## Specialized AI Tools
+
 I've integrated different AI platforms for specific needs:
+
 - Perplexity for quick news updates and rapid information gathering
 - GitHub Copilot for workplace coding assistance
 - Ollama + Complete for personal PC autocomplete
