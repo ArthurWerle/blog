@@ -10,7 +10,7 @@ image:
 tags: ["RANT", "tech market", "learning", "AI", "shorts"]
 ---
 
-![Man sitting on a chair in front of a computer, with headphones on and eyes closed.](/vibe-coding.jpg "Man sitting on a chair in front of a computer, with headphones on and with closed.")
+![Man sitting on a chair in front of a computer, with headphones on and eyes closed.](/vibe-coding.jpg "Man sitting on a chair in front of a computer, with headphones on and with eyes closed.")
 
 Probably you've heard the term "vibe coding" in the last couple of months, but there's a lot of nonsense being said about this. In this post, I just want to share my thoughts about this subject.
 
