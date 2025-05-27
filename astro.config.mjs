@@ -5,7 +5,7 @@ import { remarkReadingTime } from './remark-reading-time.mjs';
 import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
-import vercel from "@astrojs/vercel/serverless";
+import vercel from "@astrojs/vercel";
 
 // https://astro.build/config
 export default defineConfig({
