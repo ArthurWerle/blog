@@ -4,7 +4,7 @@ import GoToIcon from "../icons/GoTo.astro"
 const socialMedias = [
   {
     platform: "linkedin",
-    username: "in/arthur-werle-a8635a114/",
+    username: "in/arthurwerle/",
     label: "Linkedin",
     Icon: GoToIcon,
   },
@@ -12,12 +12,6 @@ const socialMedias = [
     platform: "github",
     username: "ArthurWerle",
     label: "Github",
-    Icon: GoToIcon,
-  },
-  {
-    platform: "instagram",
-    username: "werlearthur/",
-    label: "Instagram",
     Icon: GoToIcon,
   },
 ]
@@ -28,10 +22,10 @@ const socialMedias = [
   <a
     class="unset animated-link underline flex align-middle gap-1 text-sm relative"
     href="Arthur Werle CV.pdf"
-    title="Download Arthur's resume"
-    download
+    title="View Arthur's resume"
+    target="_blank"
   >
-    <span class="relative z-10">download my CV</span>
+    <span class="relative z-10">view my CV</span>
     <GoToIcon className="rotate-180" />
   </a>
   {
