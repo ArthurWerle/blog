@@ -5,12 +5,12 @@ pubDate: 04-24-2025
 description: "Ranting about the hype on vibe coding"
 author: "Arthur Werle"
 image:
-  url: "/vibe-coding.jpg"
+  url: "https://ycrlhk0w59rlnqve.public.blob.vercel-storage.com/vibe-coding-zbfV3VcJt9PDJfEgDTzQyKERfZ0qhT.jpg"
   alt: "Man sitting on a chair in front of a computer, with headphones on and eyes closed."
 tags: ["RANT", "tech market", "learning", "AI", "shorts"]
 ---
 
-![Man sitting on a chair in front of a computer, with headphones on and eyes closed.](/vibe-coding.jpg "Man sitting on a chair in front of a computer, with headphones on and with eyes closed.")
+![Man sitting on a chair in front of a computer, with headphones on and eyes closed.](https://ycrlhk0w59rlnqve.public.blob.vercel-storage.com/vibe-coding-zbfV3VcJt9PDJfEgDTzQyKERfZ0qhT.jpg "Man sitting on a chair in front of a computer, with headphones on and with eyes closed.")
 
 Probably you've heard the term "vibe coding" in the last couple of months, but there's a lot of nonsense being said about this. In this post, I just want to share my thoughts about this subject.
 

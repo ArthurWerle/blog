@@ -5,12 +5,12 @@ pubDate: 11-27-2024
 description: "How AI changed the way I work and the way I use the internet."
 author: "Arthur Werle"
 image:
-  url: "/ai.png"
+  url: "https://ycrlhk0w59rlnqve.public.blob.vercel-storage.com/ai-Nynmb4O2NRy1L5SB6C8roBa18Eo88B.png"
   alt: "AI apps on a smartphone screen"
 tags: ["learning", "tools", "AI", "shorts"]
 ---
 
-![AI apps on a smartphone screen](/ai.png "AI apps on a smartphone screen")
+![AI apps on a smartphone screen](https://ycrlhk0w59rlnqve.public.blob.vercel-storage.com/ai-Nynmb4O2NRy1L5SB6C8roBa18Eo88B.png "AI apps on a smartphone screen")
 
 AI has become an integral part of my daily workflow, both professionally and personally. Here's how I leverage various AI tools to enhance productivity and learning:
 
