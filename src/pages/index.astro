@@ -5,6 +5,7 @@ import PostsList from "../components/PostsList.astro"
 import Projects from "../components/Projects.astro"
 
 const pageTitle = "Arthur Werle"
+const showPostsSection = import.meta.env.PUBLIC_SHOW_POSTS_SECTION === 'true';
 ---
 
 <BaseLayout pageTitle={pageTitle}>
@@ -22,11 +23,13 @@ const pageTitle = "Arthur Werle"
     </section>
   </div>
 
-  <div>
-    <section class="mt-10">
-      <h2 class="text-emphasis font-dela text-xl md:text-2xl">Posts</h2>
-      <span class="text-xs text-gray-500">FYI: I will never use AI to write a single line of this blog</span>
-      <PostsList size={10} />
-    </section>
-  </div>
+  {showPostsSection && (
+    <div>
+      <section class="mt-10">
+        <h2 class="text-emphasis font-dela text-xl md:text-2xl">Posts</h2>
+        <span class="text-xs text-gray-500">FYI: I will never use AI to write a single line of this blog</span>
+        <PostsList size={10} />
+      </section>
+    </div>
+  )}
 </BaseLayout>
