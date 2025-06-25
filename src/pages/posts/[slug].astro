@@ -1,0 +1,22 @@
+---
+import MarkdownPostLayout from '../../layouts/MarkdownPostLayout.astro';
+
+const { slug } = Astro.params;
+
+const allPosts = import.meta.glob('./*.md', { eager: true });
+
+const postEntry = Object.entries(allPosts).find(([path]) => {
+  const fileSlug = decodeURIComponent(path.replace(/^\.\//, '').replace(/\.md$/, ''));
+  return fileSlug === slug;
+});
+
+if (!postEntry) {
+  throw new Error('404');
+}
+
+const post = postEntry[1] as any;
+---
+
+<MarkdownPostLayout frontmatter={post.frontmatter}>
+  {post.default}
+</MarkdownPostLayout> 
