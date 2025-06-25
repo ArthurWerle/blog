@@ -1,0 +1,11 @@
+{
+  "git": {
+    "deploymentEnabled": {
+      "development": true,
+      "main": true
+    }
+  },
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": "astro"
+} 
