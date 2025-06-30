@@ -1,6 +1,6 @@
 ---
 layout: "../../layouts/MarkdownPostLayout.astro"
-title: "Keeping this simple can save your life"
+title: "Keeping things simple can save your life"
 pubDate: 06-01-2025
 description: "How and why always opting for simplicity is the best thing you can do"
 author: "Arthur Werle"
@@ -14,7 +14,7 @@ tags: ["learning", "shorts"]
 
 Stop overcomplicating things. Software engineers have a weird tendency to over-engineer everything, from software to their personal lives. A very good (and funny) post about this can be found here: https://justfuckingusehtml.com/.
 
-This will be a simple post aboout the simplifications I made in my daily life (related to work, finances and studies) that I think are pure gold:
+This will be a simple post about the simplifications I made in my daily life (related to work, finances and studies) that I think are pure gold:
 
 ## Notetaking
 
