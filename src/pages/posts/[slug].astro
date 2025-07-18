@@ -11,7 +11,7 @@ const postEntry = Object.entries(allPosts).find(([path]) => {
 });
 
 if (!postEntry) {
-  throw new Error('404');
+  throw new Error('404 TEST 2');
 }
 
 const post = postEntry[1] as any;
