@@ -10,7 +10,7 @@ const octokit = new Octokit({
 
 const response = await octokit.request("GET /users/{username}/repos", {
   username: "ArthurWerle",
-  sort: "created",
+  sort: "updated",
   headers: {
     'X-GitHub-Api-Version': '2022-11-28'
   }
