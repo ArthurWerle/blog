@@ -1,16 +1,23 @@
 ---
 import Tags from "../components/Tags.astro"
-import { timestampToHumanUTC } from "../utils/dates"
+import { timestampToHumanUTC, parsePubDate } from "../utils/dates"
 import BaseLayout from "./BaseLayout.astro"
 const { frontmatter } = Astro.props
 const { minutesRead } = frontmatter
 const formattedDate = timestampToHumanUTC(frontmatter.pubDate)
+
+const article = {
+  datePublished: parsePubDate(frontmatter.pubDate).toISOString(),
+  tags: frontmatter.tags ?? [],
+  author: frontmatter.author,
+}
 ---
 
 <BaseLayout
   pageTitle={frontmatter.title}
   description={frontmatter.description}
   image={frontmatter.image}
+  article={article}
 >
   <div class="flex mb-1 text-description">
     <i class="text-sm mr-1">{frontmatter.author},</i>
