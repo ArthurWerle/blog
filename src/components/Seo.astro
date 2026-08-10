@@ -1,0 +1,162 @@
+---
+import { PROFILE, SITE, SITE_URL, absoluteUrl } from "../constants/site"
+
+interface ArticleMeta {
+  datePublished?: string
+  dateModified?: string
+  tags?: string[]
+  author?: string
+}
+
+interface Props {
+  /** Bare title, used for og:title / twitter:title / JSON-LD headline. */
+  title: string
+  /** Full document title for the <title> tag (may include a site suffix). */
+  documentTitle?: string
+  description: string
+  canonical: string
+  image?: { url: string; alt?: string }
+  type?: "website" | "article"
+  isHome?: boolean
+  article?: ArticleMeta
+}
+
+const {
+  title,
+  documentTitle = title,
+  description,
+  canonical,
+  image = SITE.image,
+  type = "website",
+  isHome = false,
+  article,
+} = Astro.props as Props
+
+const ogImage = image?.url ? image : SITE.image
+const twitterHandle = "@werlearthur"
+
+const personId = `${SITE_URL}/#person`
+const websiteId = `${SITE_URL}/#website`
+
+const person = {
+  "@type": "Person",
+  "@id": personId,
+  name: PROFILE.name,
+  url: SITE_URL,
+  image: PROFILE.image,
+  jobTitle: PROFILE.jobTitle,
+  description: PROFILE.bio,
+  worksFor: {
+    "@type": "Organization",
+    name: PROFILE.company.name,
+    url: PROFILE.company.url,
+  },
+  knowsAbout: PROFILE.knowsAbout,
+  sameAs: PROFILE.profiles.map((p) => p.url),
+}
+
+const website = {
+  "@type": "WebSite",
+  "@id": websiteId,
+  url: SITE_URL,
+  name: SITE.name,
+  description: SITE.description,
+  inLanguage: SITE.language,
+  publisher: { "@id": personId },
+  author: { "@id": personId },
+}
+
+const graph: Record<string, unknown>[] = [person, website]
+
+if (isHome) {
+  graph.push({
+    "@type": "ProfilePage",
+    "@id": `${canonical}#profilepage`,
+    url: canonical,
+    name: `${PROFILE.name} — ${PROFILE.jobTitle}`,
+    isPartOf: { "@id": websiteId },
+    about: { "@id": personId },
+    mainEntity: { "@id": personId },
+  })
+}
+
+if (type === "article" && article) {
+  graph.push({
+    "@type": "BlogPosting",
+    headline: title,
+    description,
+    url: canonical,
+    mainEntityOfPage: canonical,
+    image: ogImage.url,
+    datePublished: article.datePublished,
+    dateModified: article.dateModified ?? article.datePublished,
+    keywords: article.tags,
+    inLanguage: SITE.language,
+    author: { "@id": personId },
+    publisher: { "@id": personId },
+  })
+}
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": graph,
+}
+
+// Escape `<` so a stray "</script>" in data can't break out of the tag.
+const jsonLdString = JSON.stringify(jsonLd).replace(/</g, "\\u003c")
+---
+{/* Primary meta */}
+<title>{documentTitle}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+<meta name="author" content={PROFILE.name} />
+<meta
+  name="robots"
+  content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+/>
+<meta name="theme-color" content={SITE.themeColor} />
+<meta name="generator" content={Astro.generator} />
+
+{/* Open Graph */}
+<meta property="og:type" content={type} />
+<meta property="og:site_name" content={PROFILE.name} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:locale" content={SITE.locale} />
+<meta property="og:image" content={ogImage.url} />
+{ogImage.alt && <meta property="og:image:alt" content={ogImage.alt} />}
+{type === "article" && article?.datePublished && (
+  <meta property="article:published_time" content={article.datePublished} />
+)}
+{type === "article" && article?.author && (
+  <meta property="article:author" content={article.author} />
+)}
+{type === "article" &&
+  article?.tags?.map((tag) => <meta property="article:tag" content={tag} />)}
+
+{/* Twitter / X */}
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage.url} />
+<meta name="twitter:creator" content={twitterHandle} />
+<meta name="twitter:site" content={twitterHandle} />
+
+{/* Discovery: feeds & machine-readable resources */}
+<link
+  rel="alternate"
+  type="application/rss+xml"
+  title={`${PROFILE.name} — Writing`}
+  href={absoluteUrl("/rss.xml")}
+/>
+<link
+  rel="alternate"
+  type="application/json"
+  title="Résumé (JSON Resume)"
+  href={absoluteUrl("/resume.json")}
+/>
+<link rel="alternate" type="text/plain" title="llms.txt" href={absoluteUrl("/llms.txt")} />
+<link rel="manifest" href="/manifest.webmanifest" />
+
+<script type="application/ld+json" set:html={jsonLdString} />

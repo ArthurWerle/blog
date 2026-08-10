@@ -5,35 +5,51 @@ import Footer from "../components/Footer.astro"
 import "../styles/global.css"
 import Greetings from "../components/Greetings.astro"
 import ReturnToHome from "../components/ReturnToHome.astro"
+import Seo from "../components/Seo.astro"
+import { PROFILE, SITE, SITE_URL } from "../constants/site"
 
-const DEFAULT_DESCRIPTION =
-  "a carbon-based life form that really really likes food"
-const { pageTitle, description, image = {} } = Astro.props
+const { pageTitle, description, image = {}, article } = Astro.props
 
 const path = Astro.url.pathname.replace(/\/$/, "")
 const isHome = path === ""
 const isLinksPage = path === "/links"
+const isPost = path.startsWith("/posts")
 const showPageTitle = !isLinksPage
 const showPageFooter = !isLinksPage
+
+const canonical = new URL(Astro.url.pathname, Astro.site ?? SITE_URL).href
+const type = isPost ? "article" : "website"
+// Bare title feeds og:title / twitter:title / JSON-LD headline;
+// documentTitle (with the "— Arthur Werle" suffix) is only for the <title> tag.
+const bareTitle = isHome
+  ? `${PROFILE.name} — ${PROFILE.jobTitle}`
+  : pageTitle || SITE.title
+const documentTitle = isHome || !pageTitle
+  ? bareTitle
+  : `${pageTitle} — ${PROFILE.name}`
+const resolvedDescription = description ? description : SITE.description
 ---
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="https://ycrlhk0w59rlnqve.public.blob.vercel-storage.com/profile-aK01mWPmjsgn17B6Ljv3IsZPLE0x2U.png" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/png" href={PROFILE.image} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Big+Shoulders+Text:wght@100..900&family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,300;1,500;1,700&family=Instrument+Serif:ital@0;1&family=Dela+Gothic+One&display=swap"
       rel="stylesheet"
     />
-    <meta name="viewport" content="width=device-width" />
-    <meta property="og:image" content={image.url ? image.url : ""} />
-    <meta
-      name="description"
-      content={description ? description : DEFAULT_DESCRIPTION}
+    <Seo
+      title={bareTitle}
+      documentTitle={documentTitle}
+      description={resolvedDescription}
+      canonical={canonical}
+      image={image?.url ? image : SITE.image}
+      type={type}
+      isHome={isHome}
+      article={article}
     />
-    <meta name="generator" content={Astro.generator} />
-    <title>arthur werle :)</title>
   </head>
   <body
     class="min-h-screen text-text-body bg-bg-body p-5 md:p-6 selection:bg-zinc-600 selection:text-zinc-100 grainy-background"
