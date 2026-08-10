@@ -13,7 +13,11 @@
  * Edit this file to update the whole "machine-readable" layer at once.
  */
 
-/** Canonical production origin (no trailing slash). */
+/**
+ * Canonical production origin (no trailing slash).
+ * NOTE: the CV lists arthurwerle.com.br — if that domain is canonical instead,
+ * change this value and the matching `site` in astro.config.mjs.
+ */
 export const SITE_URL = "https://arthurwerle.com"
 
 /** Build an absolute URL for a site-relative path. */
@@ -56,8 +60,9 @@ export const SOCIAL_PROFILES = [
 /** Core identity used across meta tags, JSON-LD and llms.txt. */
 export const PROFILE = {
   name: "Arthur Werle",
-  /** Short professional headline. */
-  jobTitle: "Software Engineer",
+  /** Professional headline (schema.org Person.jobTitle). */
+  jobTitle: "Senior Software Engineer",
+  email: "arthur.werle@gmail.com",
   company: {
     name: "TwoBoxes",
     url: "https://www.twoboxes.com/",
@@ -67,27 +72,34 @@ export const PROFILE = {
   cv: CV_URL,
   /** One-sentence description for meta tags / llms.txt blurb. */
   tagline:
-    "Software engineer focused on shipping simple, well-crafted software — currently building at TwoBoxes.",
+    "Senior software engineer with 8+ years building scalable, well-crafted web apps end to end — currently at TwoBoxes.",
   /** Longer bio paragraph. */
   bio:
-    "Arthur Werle is a software engineer who cares about keeping things simple. " +
-    "He builds web products end to end, writes about software craftsmanship, " +
-    "agile/XP practices, learning and how AI is changing the way we work, and has " +
-    "spent time working remotely as a digital nomad.",
+    "Arthur Werle is a senior software engineer with 8+ years building scalable web applications " +
+    "end to end. He thrives in fast-paced startups, wearing many hats — from UX polish to performance " +
+    "and large-scale codebase modernization to developer experience. He values ownership, getting things " +
+    "done, leaving things better than he found them, and sharing knowledge. B.Sc in Information Systems. " +
+    "Keep things simple.",
   /** Topics this person knows about (schema.org Person.knowsAbout). */
   knowsAbout: [
     "Software Engineering",
+    "Frontend Engineering",
     "Web Development",
     "TypeScript",
     "JavaScript",
     "React",
+    "Next.js",
     "Node.js",
-    "Astro",
+    "Nest.js",
     "Tailwind CSS",
+    "React Query",
+    "Web Performance Optimization",
+    "Developer Experience",
+    "Automated Testing",
+    "CI/CD",
+    "Docker",
+    "AWS",
     "Software Craftsmanship",
-    "Agile Software Development",
-    "Extreme Programming",
-    "Artificial Intelligence Tools",
   ],
   profiles: SOCIAL_PROFILES,
 } as const
@@ -98,7 +110,7 @@ export const SITE = {
   name: `${PROFILE.name} — Portfolio`,
   title: PROFILE.name,
   description:
-    "Personal site and portfolio of Arthur Werle, a software engineer who likes to keep things simple. Projects, writing and links.",
+    "Portfolio of Arthur Werle — senior software engineer with 8+ years building scalable web apps. Projects, writing, résumé and links.",
   locale: "en_US",
   language: "en",
   themeColor: "#1e1f21",
@@ -110,10 +122,7 @@ export const SITE = {
 
 /**
  * JSON Resume (https://jsonresume.org/schema/) served at /resume.json.
- *
- * NOTE: work history, education and skill levels below are placeholders seeded
- * from public info on the site. Update them with real dates/details — this is
- * the exact data recruiter agents will read.
+ * Sourced from Arthur's CV.
  */
 export const RESUME = {
   $schema:
@@ -122,11 +131,17 @@ export const RESUME = {
     name: PROFILE.name,
     label: PROFILE.jobTitle,
     image: PROFILE.image,
-    // email: intentionally omitted from the public resume — see note in chat.
+    email: PROFILE.email,
     url: SITE_URL,
-    summary: PROFILE.bio,
+    summary:
+      "Senior Software Engineer with 8+ years of experience building scalable web solutions. " +
+      "Comfortable in fast-paced environments, wearing many hats and working on applications " +
+      "end-to-end. I believe in ownership, getting things done, leaving things better than I " +
+      "found them, enhancing DX, and sharing knowledge. Curious and always willing to learn. " +
+      "B.Sc in Information Systems. Keep things simple.",
     location: {
-      // TODO: confirm — left minimal to avoid publishing a wrong location.
+      // City not stated on the CV; region inferred from education/history.
+      region: "Rio Grande do Sul",
       countryCode: "BR",
     },
     profiles: SOCIAL_PROFILES.map((p) => ({
@@ -137,29 +152,115 @@ export const RESUME = {
   },
   work: [
     {
-      name: PROFILE.company.name,
-      position: PROFILE.jobTitle,
+      name: "TwoBoxes",
+      position: "Software Engineer",
       url: PROFILE.company.url,
-      summary: "Crafting software at TwoBoxes.",
-      // startDate / endDate: TODO add real dates.
+      location: "Remote (US)",
+      startDate: "2025-07",
+      summary: "Building product end to end at an early-stage startup.",
+      highlights: [
+        "Improved product UX with animations, feedback, infinite scrolling lists, and MUI guidelines.",
+        "Advocated for a stronger code review culture focused on learning and helping others.",
+        "Wrote and reviewed technical scoping documents for new features and major changes.",
+        "Proactively proposed technical and product improvements.",
+        "Maintained high performance across multiple initiatives and technologies in a fast-paced startup.",
+      ],
+    },
+    {
+      name: "Claravine",
+      position: "Senior Software Engineer",
+      url: "https://www.claravine.com/",
+      location: "Remote (US)",
+      startDate: "2023-05",
+      endDate: "2025-07",
+      highlights: [
+        "Owned the Excel Add-in (Microsoft Office SDK, Auth0, EffectTS); grew batch size from 100 to 1,000+ rows per request for a 10x scalability gain and raised test coverage by 100%.",
+        "Built a custom UI component library shared across products, versioned via AWS CodeArtifact.",
+        "Developed high-performance features for large datasets: virtualized lists, pagination, infinite query, lazy loading, code splitting, and React Query state management.",
+        "Modernized a legacy codebase from JavaScript/Redux/React 16/MUI 4 to TypeScript/React 18/Zustand/Tailwind.",
+        "Cleared a full-stack bug backlog across PHP, Kotlin/Spring Boot microservices, Postgres, Docker, Kubernetes, and CircleCI.",
+        "Advocated for better DX: pragmatic ESLint rules, PR reviews as learning, and a 'leave it better than I found it' mindset.",
+      ],
+    },
+    {
+      name: "CWI Software",
+      position: "Frontend Engineer",
+      url: "https://www.cwi.com.br/",
+      location: "Remote (Brazil)",
+      startDate: "2020-02",
+      endDate: "2023-05",
+      highlights: [
+        "Rewrote a legacy Backbone.js/JSP/jQuery codebase to React, TypeScript, and Next.js for Brazil's largest fashion & lifestyle group's e-commerce ($200M+ ARR).",
+        "Improved e-commerce performance by 40%+ via lazy loading, Webpack code-splitting, removing CSS-in-JS, React Query caching, and cutting unnecessary re-renders.",
+        "Championed DX through Tailwind, Storybook, an agnostic component library, ADRs, and formal code review processes.",
+        "Mentored junior developers via pair programming, PR reviews, and continuous feedback.",
+        "Delivered with strong performance on a team of 20+ engineers.",
+      ],
+    },
+    {
+      name: "Kunden Systems",
+      position: "Fullstack Engineer",
+      location: "Brazil",
+      startDate: "2018-01",
+      endDate: "2020-02",
+      highlights: [
+        "Built a web ERP far more user-friendly than the previous Oracle Forms system, reducing the need for user training.",
+        "Drove Git adoption (replacing TortoiseSVN) and code-quality tooling (SonarQube, ESLint, Prettier, TypeScript).",
+        "Worked full-stack: Node.js/Express back end, OracleDB/PL/SQL, and Angular/PUG/Sass/HTML5 front end.",
+      ],
+    },
+    {
+      name: "Prefeitura de Ivoti",
+      position: "Computers Instructor Intern",
+      location: "Brazil",
+      startDate: "2016-04",
+      endDate: "2018-01",
+      highlights: [
+        "Helped students with computer-based assignments and kept the informatics room fully operational.",
+        "Taught computer-literacy classes for elderly people at a local library.",
+      ],
     },
   ],
   education: [
-    // TODO: add education entries, e.g.
-    // { institution: "", area: "", studyType: "", startDate: "", endDate: "" },
+    {
+      institution: "UNISINOS",
+      area: "Information Systems",
+      studyType: "Bachelor of Science",
+      // CV shows "23/02 - 26/12" — read as Feb 2023 – Dec 2026. Confirm dates.
+      startDate: "2023-02",
+      endDate: "2026-12",
+    },
   ],
   skills: [
     {
+      name: "Languages",
+      keywords: ["TypeScript", "JavaScript", "Kotlin", "PHP", "Go"],
+    },
+    {
       name: "Frontend",
-      keywords: ["TypeScript", "JavaScript", "React", "Astro", "Tailwind CSS", "HTML", "CSS"],
+      keywords: [
+        "React",
+        "Next.js",
+        "Redux",
+        "React Query",
+        "Tailwind CSS",
+        "SASS",
+        "Webpack",
+        "Babel",
+        "Angular",
+      ],
     },
     {
       name: "Backend",
-      keywords: ["Node.js", "REST APIs"],
+      keywords: ["Node.js", "Express", "Nest.js", "PostgreSQL"],
     },
     {
-      name: "Practices",
-      keywords: ["Software Craftsmanship", "Agile", "Extreme Programming", "Testing"],
+      name: "Testing & CI/CD",
+      keywords: ["Jest", "React Testing Library", "CircleCI", "GitHub Actions"],
+    },
+    {
+      name: "Infrastructure",
+      keywords: ["Docker", "AWS"],
     },
   ],
   languages: [
@@ -168,6 +269,7 @@ export const RESUME = {
   ],
   interests: [
     { name: "Simplicity in software" },
+    { name: "Developer experience" },
     { name: "AI tooling" },
     { name: "Reading", keywords: ["philosophy", "history", "software"] },
   ],

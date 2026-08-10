@@ -24,6 +24,7 @@ export const GET: APIRoute = () => {
     `- Role: ${PROFILE.jobTitle} at ${PROFILE.company.name} (${PROFILE.company.url})`,
     `- Focus: ${PROFILE.knowsAbout.join(", ")}`,
     `- Profiles: ${PROFILE.profiles.map((p) => `${p.network} ${p.url}`).join(" | ")}`,
+    `- Email: ${PROFILE.email}`,
     `- Résumé (JSON): ${absoluteUrl("/resume.json")}`,
     `- CV (PDF): ${PROFILE.cv}`,
     "",
